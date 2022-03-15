@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Page Title</title>
+    <script>  
+        
+        
+        function bankingApp(){
+            this.balance=0;
+            this.openAccount = function(openbalance){
+                this.balance=openbalance;
+                document.write(openbalance)
+            }
+            this.withdraw = function(withdrawAmount){
+                if(withdrawAmount>this.balance)
+                document.write("Not Enough Balance")
+                else
+                {   
+                    this.balance = this.balance - withdrawAmount; 
+                    document.write(" Withdraw Successfull " + this.balance);   }
+            }
+            this.deposit = function(DepositAmount){
+                this.balance=this.balance + DepositAmount;
+                document.write("deposited the Amt. is " + DepositAmount)
+                document.write("<br>")                
+                document.write(" current balance is " + this.balance)
+            }
+        }
+
+        var acc = new bankingApp();
+
+        acc.openAccount(25000);
+        
+        acc.withdraw(2500);
+       
+        acc.deposit(25000);
+       
+ </script>
+    
+</head>
+<body>
+
+</body>
+</html>
